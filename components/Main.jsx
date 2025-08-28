@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import LanguageCard from './Card'
+import ButtonCard from "./Button";
 
 
 const Main = ({ languages }) => {
-  const [language, setlanguage] = useState(languages[0]);
+  const [language, setLanguage] = useState(languages[0]);
 
   return (
     <main className="mt-4">
@@ -12,14 +13,11 @@ const Main = ({ languages }) => {
         <div className="row">
           <ul className="d-flex gap-2 col-12">
             {languages.map((newLanguages) => (
-              <li className="list-unstyled p-1" key={newLanguages.id}>
-                <button className="btn btn-primary mt-2 "
-                  onClick={() => { setlanguage(newLanguages) }}
-                >
-                  {newLanguages.title}
-
-                </button>
-              </li>
+              <ButtonCard
+                key={newLanguages.id}
+                language={newLanguages}
+                onClick={setLanguage}
+              />
             ))}
           </ul>
           <LanguageCard language={language} />
