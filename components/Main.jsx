@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import LanguageCard from './Card'
+
 
 const Main = ({ languages }) => {
   const [language, setlanguage] = useState(languages[0]);
@@ -14,16 +16,13 @@ const Main = ({ languages }) => {
                 <button className="btn btn-primary mt-2 "
                   onClick={() => { setlanguage(newLanguages) }}
                 >
-                  {newLanguages.title}</button>
+                  {newLanguages.title}
+
+                </button>
               </li>
             ))}
           </ul>
-          <div className=" card shadow-sm col-6 mt-4">
-            <div className="card-body">
-              <h5 className="card-title">{language.title}</h5>
-              <p className="card-text">{language.description}</p>
-            </div>
-          </div>
+          <LanguageCard language={language} />
         </div>
       </div>
     </main >
