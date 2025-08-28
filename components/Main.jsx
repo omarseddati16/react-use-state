@@ -5,7 +5,8 @@ import ButtonCard from "./Button";
 
 
 const Main = ({ languages }) => {
-  const [language, setLanguage] = useState(languages[0]);
+  const [language, setLanguage] = useState('');
+  console.log(language)
   return (
     <main className="mt-4">
       <div className="container">
