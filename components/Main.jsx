@@ -6,7 +6,6 @@ import ButtonCard from "./Button";
 
 const Main = ({ languages }) => {
   const [language, setLanguage] = useState(languages[0]);
-
   return (
     <main className="mt-4">
       <div className="container">
@@ -16,6 +15,7 @@ const Main = ({ languages }) => {
               <ButtonCard
                 key={newLanguages.id}
                 language={newLanguages}
+                isActive={language === newLanguages}
                 onClick={setLanguage}
               />
             ))}
