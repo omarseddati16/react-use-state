@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 const Main = ({ languages }) => {
-  const [language, setlanguage] = useState[0];
+  const [language, setlanguage] = useState(languages[0]);
+
   return (
     <main className="mt-4">
       <div className="container">
@@ -11,10 +12,9 @@ const Main = ({ languages }) => {
             {languages.map((newLanguages) => (
               <li className="list-unstyled p-1" key={newLanguages.id}>
                 <button className="btn btn-primary mt-2 "
-                  onClick={() => setlanguage(newLanguages)}
+                  onClick={() => { setlanguage(newLanguages) }}
                 >
-                  {newLanguages.title}
-                </button>
+                  {newLanguages.title}</button>
               </li>
             ))}
           </ul>
